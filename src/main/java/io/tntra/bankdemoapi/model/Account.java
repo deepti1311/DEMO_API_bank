@@ -41,6 +41,7 @@ public class Account {
 
     public void setMin_balance(BigDecimal min_balance) {
         this.min_balance = min_balance;
+
     }
 
     public BigDecimal getOverDraft() {
