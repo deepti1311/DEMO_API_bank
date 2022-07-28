@@ -4,6 +4,7 @@ import io.tntra.bankdemoapi.Enum.pkg.AccountType;
 import io.tntra.bankdemoapi.Exceptions.InsufficientBalanceException;
 import io.tntra.bankdemoapi.Exceptions.minimumbalanceException;
 import io.tntra.bankdemoapi.model.Account;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -13,8 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Service
-public abstract class AccountService implements BankAccountServices {
+@Component
+public class AccountService implements BankAccountServices {
     AccountType account_type;
 
     private static final Map<String, Account> AccountRepo = new HashMap<>();
@@ -33,6 +34,7 @@ public abstract class AccountService implements BankAccountServices {
     }
     @Override
     public Account detailsAccount(String name){
+
       return  AccountRepo.get(name);
 
     }

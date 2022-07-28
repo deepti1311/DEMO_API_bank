@@ -1,5 +1,7 @@
 package io.tntra.bankdemoapi.model;
 
+import io.tntra.bankdemoapi.Enum.pkg.AccountType;
+
 import java.math.BigDecimal;
 
 public class Account {
@@ -10,6 +12,16 @@ public class Account {
     public BigDecimal balance;
     public BigDecimal min_balance = BigDecimal.valueOf(0);
     private BigDecimal overDraft;
+
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = AccountType.create(accountType);
+    }
+
+    public AccountType accountType;
 
     public String getId() {
         return id;

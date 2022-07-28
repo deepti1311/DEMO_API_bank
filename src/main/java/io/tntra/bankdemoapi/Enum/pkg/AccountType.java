@@ -5,9 +5,27 @@ public enum AccountType {
     CURRENT("CURRENT"),
     FD("FD");
 
-    public String value;
+    final String value;
 
     AccountType(String value) {
         this.value = value;
+
     }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public static AccountType create(String value){
+        AccountType[] accountTypes =AccountType.values();
+        for(AccountType type:accountTypes){
+            if(type.getValue().equalsIgnoreCase(value)){
+                return  type;
+            }
+
+        }
+        return SAVINGS;
+    }
+
+
 }
